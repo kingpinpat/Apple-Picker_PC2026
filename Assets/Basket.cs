@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
  public class Basket : MonoBehaviour
 {
-     void Start() {
-    
+    public ScoreCounter scoreCounter;
+    void Start() {
+                 // Find a GameObject named ScoreCounter in the Scene Hierarchy
+            GameObject scoreGO = GameObject.Find("ScoreCounter");         // b
+                     // Get the ScoreCounter (Script) component of scoreGO
+            scoreCounter = scoreGO.GetComponent<ScoreCounter>();
     }
 
      void Update()
@@ -33,6 +38,8 @@ using UnityEngine;
          if (collidedWith.CompareTag("Apple"))
         {                         // c
             Destroy(collidedWith);
-         }
+            scoreCounter.score += 100;
+            HighScore.TRY_SET_HIGH_SCORE(scoreCounter.score);
+        }
      }
 }

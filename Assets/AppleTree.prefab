@@ -189,7 +189,7 @@ MonoBehaviour:
   applePrefab: {fileID: 6481915853022083993, guid: 3f57b043545a85d4ba8243a9269fd081, type: 3}
   speed: 20
   leftAndRightEdge: 24
-  changeDirChance: 0.1
+  changeDirChance: 50
   appleDropDelay: 1
 --- !u!1 &8369974854413708647
 GameObject:
